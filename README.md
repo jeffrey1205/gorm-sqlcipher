@@ -6,11 +6,11 @@
 
 ```go
 import (
-  sqlcipher "github.com/open-olive/gorm-sqlcipher"
+  sqlcipher "github.com/jeffrey1205/gorm-sqlcipher"
   "gorm.io/gorm"
 )
 
-// https://github.com/mutecomm/go-sqlcipher
+// https://github.com/jeffrey1205/go-sqlcipher
 db, err := gorm.Open(sqlcipher.Open("gorm.db"), &gorm.Config{})
 ```
 

@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	_ "github.com/mutecomm/go-sqlcipher/v4"
+	_ "github.com/jeffrey1205/go-sqlcipher"
 	"gorm.io/gorm"
 	"gorm.io/gorm/callbacks"
 	"gorm.io/gorm/clause"
@@ -81,12 +81,12 @@ func (dialector Dialector) ClauseBuilders() map[string]clause.ClauseBuilder {
 		},
 		"LIMIT": func(c clause.Clause, builder clause.Builder) {
 			if limit, ok := c.Expression.(clause.Limit); ok {
-				if limit.Limit > 0 {
+				if *limit.Limit > 0 {
 					builder.WriteString("LIMIT ")
-					builder.WriteString(strconv.Itoa(limit.Limit))
+					builder.WriteString(strconv.Itoa(*limit.Limit))
 				}
 				if limit.Offset > 0 {
-					if limit.Limit > 0 {
+					if *limit.Limit > 0 {
 						builder.WriteString(" ")
 					}
 					builder.WriteString("OFFSET ")
