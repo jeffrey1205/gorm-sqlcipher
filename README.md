@@ -6,7 +6,7 @@
 
 ```go
 import (
-  sqlcipher "github.com/jeffrey1205/gorm-sqlcipher"
+  sqlcipher "github.com/jeffrey1205/gorm-sqlcipher/v4"
   "gorm.io/gorm"
 )
 
